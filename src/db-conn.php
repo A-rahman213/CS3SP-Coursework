@@ -15,5 +15,5 @@ try {
         PDO::ATTR_EMULATE_PREPARES => false,
     ]);
 } catch(PDOException $e){
-    echo "Failed to connect: " . $e->getMessage();
+    print "Failed to connect: " . $e->getMessage();
 }
