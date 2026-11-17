@@ -1,7 +1,7 @@
 <?php
 // db-conn.php - Used to connect to the database
-$DB_HOST = getenv('DB_NAME') ?: 'db';
-$DB_NAME = 'appdb';
+$DB_HOST = getenv('DB_HOST') ?: 'db';
+$DB_NAME = getenv('DB_NAME') ?: 'appdb';
 $DB_USER = getenv('DB_USER');
 $DB_PASS = getenv('DB_PASSWORD');
 $DB_CHARSET = 'utf8mb4';
