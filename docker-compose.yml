@@ -5,6 +5,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+    environment:
+      DB_NAME: ${DB_NAME:-db}
+      DB_USER: ${DB_USER:-appuser}
+      DB_PASSWORD: ${DB_PASSWORD:-HouseHereThere}
     volumes:
       - ./src:/var/www/html
     depends_on:
@@ -18,7 +22,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE:-appdb}
       MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-HouseHereThere}
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
